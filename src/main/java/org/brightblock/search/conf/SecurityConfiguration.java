@@ -13,7 +13,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception {
     	http.cors().and()
     		.authorizeRequests()
-			.antMatchers("/resources/**", "/index/**").permitAll()
+			.antMatchers("/resources/**", "/index/**", "/api/**").permitAll()
 			.anyRequest().permitAll() //.authenticated()
 			.and().csrf().disable()
 		.formLogin()
