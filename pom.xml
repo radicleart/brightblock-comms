@@ -5,12 +5,12 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>org.brightblock</groupId>
-	<artifactId>brightblock-search</artifactId>
+	<artifactId>brightblock-comms</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
-	<name>brightblock-search</name>
-	<description>brightblock-search provides decentralised apps with a search indexing service.</description>
+	<name>brightblock-comms</name>
+	<description>brightblock-comms provides decentralised apps with a user messaging service.</description>
 
 	<parent>
 		<groupId>org.springframework.boot</groupId>
@@ -70,17 +70,6 @@
 			<groupId>javax.json</groupId>
 			<artifactId>javax.json-api</artifactId>
 			<version>1.1.2</version>
-		</dependency>
-
-		<dependency>
-			<groupId>org.apache.lucene</groupId>
-			<artifactId>lucene-core</artifactId>
-			<version>7.3.0</version>
-		</dependency>
-		<dependency>
-			<groupId>org.apache.lucene</groupId>
-			<artifactId>lucene-queryparser</artifactId>
-			<version>7.3.0</version>
 		</dependency>
 
 		<dependency>

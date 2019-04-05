@@ -87,10 +87,6 @@
   <classpathentry kind="var" path="M2_REPO/org/springframework/spring-test/5.0.7.RELEASE/spring-test-5.0.7.RELEASE.jar" sourcepath="M2_REPO/org/springframework/spring-test/5.0.7.RELEASE/spring-test-5.0.7.RELEASE-sources.jar"/>
   <classpathentry kind="var" path="M2_REPO/org/xmlunit/xmlunit-core/2.5.1/xmlunit-core-2.5.1.jar" sourcepath="M2_REPO/org/xmlunit/xmlunit-core/2.5.1/xmlunit-core-2.5.1-sources.jar"/>
   <classpathentry kind="var" path="M2_REPO/org/springframework/security/spring-security-test/5.0.6.RELEASE/spring-security-test-5.0.6.RELEASE.jar" sourcepath="M2_REPO/org/springframework/security/spring-security-test/5.0.6.RELEASE/spring-security-test-5.0.6.RELEASE-sources.jar"/>
-  <classpathentry kind="var" path="M2_REPO/org/apache/lucene/lucene-core/7.3.0/lucene-core-7.3.0.jar"/>
-  <classpathentry kind="var" path="M2_REPO/org/apache/lucene/lucene-queryparser/7.3.0/lucene-queryparser-7.3.0.jar"/>
-  <classpathentry kind="var" path="M2_REPO/org/apache/lucene/lucene-queries/7.3.0/lucene-queries-7.3.0.jar"/>
-  <classpathentry kind="var" path="M2_REPO/org/apache/lucene/lucene-sandbox/7.3.0/lucene-sandbox-7.3.0.jar"/>
   <classpathentry kind="var" path="M2_REPO/com/ning/async-http-client/1.8.17/async-http-client-1.8.17.jar"/>
   <classpathentry kind="var" path="M2_REPO/io/netty/netty/3.9.2.Final/netty-3.9.2.Final.jar"/>
   <classpathentry kind="var" path="M2_REPO/org/springframework/boot/spring-boot-starter-data-mongodb/2.0.3.RELEASE/spring-boot-starter-data-mongodb-2.0.3.RELEASE.jar"/>

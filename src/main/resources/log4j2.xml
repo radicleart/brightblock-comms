@@ -10,6 +10,7 @@
 		<Console name="ConsoleAppender" target="SYSTEM_OUT" follow="true">
 			<PatternLayout pattern="${LOG_PATTERN}" />
 		</Console>
+		<!-- 
 		<RollingFile name="FileAppender" fileName="/usr/local/tomcat/logs/brightblock.log"
 			filePattern="/appbase/logs/tomcat/brightblock-%d{yyyy-MM-dd}-%i.log">
 			<PatternLayout>
@@ -20,6 +21,7 @@
 			</Policies>
 			<DefaultRolloverStrategy max="10" />
 		</RollingFile>
+		 -->
 	</Appenders>
 	<!-- Rolling File Appender -->
 	<Loggers>
