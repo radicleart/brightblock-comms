@@ -10,6 +10,10 @@ public class CollaborationMessage {
 	public String sender;
 	public String message;
 
+	public CollaborationMessage() {
+		super();
+	}
+
 	public CollaborationMessage(String recipient, String sender, String type, String message) {
 		super();
 		this.recipient = recipient;

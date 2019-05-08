@@ -26,7 +26,7 @@ public class CollaborationController {
 
 	@Autowired private CollaborationRepository collaborationRepository;
 
-	@RequestMapping(value = "/api/send-to/{username}", method = RequestMethod.POST, produces = { MediaType.APPLICATION_JSON_VALUE })
+	@RequestMapping(value = "/comms/send-to", method = RequestMethod.POST, produces = { MediaType.APPLICATION_JSON_VALUE })
 	public ResponseEntity<ApiModel> findByToUser(HttpServletRequest request, @RequestBody CollaborationMessage message) {
 		if (message.getDomain() == null) {
 			message.setDomain(request.getHeader(ForwardHeaderModel.X_FORWARDED_HOST));
@@ -37,7 +37,7 @@ public class CollaborationController {
 		return new ResponseEntity<ApiModel>(model, HttpStatus.OK);
 	}
 
-	@RequestMapping(value = "/api/find-to/{username}", method = RequestMethod.GET, produces = { MediaType.APPLICATION_JSON_VALUE })
+	@RequestMapping(value = "/comms/find-to/{username}", method = RequestMethod.GET, produces = { MediaType.APPLICATION_JSON_VALUE })
 	public ResponseEntity<ApiModel> findByToUser(HttpServletRequest request, @PathVariable String username) {
 		List<CollaborationMessage> messages = collaborationRepository.findByRecipient(username);
 		ApiModel model = ApiModel.getSuccess(ResponseCodes.OK, messages);
@@ -45,7 +45,7 @@ public class CollaborationController {
 		return new ResponseEntity<ApiModel>(model, HttpStatus.OK);
 	}
 
-	@RequestMapping(value = "/api/find-from/{username}", method = RequestMethod.GET, produces = { MediaType.APPLICATION_JSON_VALUE })
+	@RequestMapping(value = "/comms/find-from/{username}", method = RequestMethod.GET, produces = { MediaType.APPLICATION_JSON_VALUE })
 	public ResponseEntity<ApiModel> findByFromUser(HttpServletRequest request, @PathVariable String username) {
 		List<CollaborationMessage> messages = collaborationRepository.findByRecipient(username);
 		ApiModel model = ApiModel.getSuccess(ResponseCodes.OK, messages);
@@ -53,7 +53,7 @@ public class CollaborationController {
 		return new ResponseEntity<ApiModel>(model, HttpStatus.OK);
 	}
 
-	@RequestMapping(value = "/api/find-all", method = RequestMethod.GET, produces = { MediaType.APPLICATION_JSON_VALUE })
+	@RequestMapping(value = "/comms/find-all", method = RequestMethod.GET, produces = { MediaType.APPLICATION_JSON_VALUE })
 	public ResponseEntity<ApiModel> findAll(HttpServletRequest request) {
 		List<CollaborationMessage> messages = collaborationRepository.findAll();
 		ApiModel model = ApiModel.getSuccess(ResponseCodes.OK, messages);
