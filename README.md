@@ -1,4 +1,4 @@
-# Brightblock Comms
+# Radicle Comms
 
 Communication and messaging microservice for blockstack d-apps and their users. 
 
