@@ -1,5 +1,6 @@
 application:
    blockstackNamesIndex: /var/index/dapps
+   mongoIp: localhost
    domains:
       -  domain: radicle.art
 
@@ -8,21 +9,25 @@ application:
 spring:
     profiles: test
 application:
+   mongoIp: localhost
 
 ---
 
 spring:
     profiles: docker-dev
 application:
+   mongoIp: localhost
 
 ---
 
 spring:
     profiles: staging
 application:
+   mongoIp: 172.18.0.1
 
 ---
 
 spring:
     profiles: production
 application:
+   mongoIp: 172.18.0.1

@@ -17,6 +17,7 @@ public class ApplicationSettings {
 	private String blockstackBase;
 	private String blockstackOrgBase;
 	private List<DomainModel> domains;
+	private String mongoIp;
 
 	public String getBlockstackBase() {
 		return blockstackBase;
@@ -64,5 +65,13 @@ public class ApplicationSettings {
 
 	public void setDomains(List<DomainModel> domains) {
 		this.domains = domains;
+	}
+
+	public String getMongoIp() {
+		return mongoIp;
+	}
+
+	public void setMongoIp(String mongoIp) {
+		this.mongoIp = mongoIp;
 	}
 }
