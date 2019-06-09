@@ -1,10 +1,12 @@
 package org.brightblock.comms.conf;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Configuration;
 import org.springframework.data.mongodb.config.AbstractMongoConfiguration;
 
 import com.mongodb.MongoClient;
 
+@Configuration
 public class MongodbConfiguration extends AbstractMongoConfiguration {
 
 	@Autowired private ApplicationSettings applicationSettings;
