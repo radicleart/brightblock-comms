@@ -23,11 +23,11 @@ application:
 spring:
     profiles: staging
 application:
-   mongoIp: 172.18.0.1
+   mongoIp: 139.162.204.44
 
 ---
 
 spring:
     profiles: production
 application:
-   mongoIp: 172.18.0.1
+   mongoIp: 178.79.138.62

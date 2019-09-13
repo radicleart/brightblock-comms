@@ -1,6 +1,6 @@
 # Radicle Comms
 
-Communication and messaging microservice for blockstack d-apps and their users. 
+Communication module for gaia hub administration. 
 
 ## Table of Contents
 
@@ -14,47 +14,17 @@ Communication and messaging microservice for blockstack d-apps and their users.
 
 ## Purpose
 
-Provides secure, private and encrypted messaging between blockstack users.
+Provides secure, private and encrypted setup of blockstack user storage.
 
-Two modes of communication are provided to facilitate communication between users who are both online and
-with users who may also be offline at the time messages are sent. The former uses push
-notifications over websockets and the latter provides standard http pull for new
-messages.
-
-This component is intended to complement the radiks server initiative at Blockstack. 
-The thought is that providing different styles and ways to acheive these goals maximises the 
-pool of people who can enter and help with the development.
-
-The intention is for d-app developers to share or run their own brightblock-comms and search
-servers either by;
-1. shared hosting model - add new d-app domain in configuration,
-2. siloed hosting - pull and run with docker.
 
 ## Privacy
 
-Messages are encrypted json blobs that can only be read by the user(s) they are intended for.
-This is acheived by the sender encrypting the message client side with the recipients
-public key. 
 
-Sender and recipient blockstack ids are obfuscated by;
-
-1. Sending them to the server SHA256 hashed,
-2. Rehashing this hash on the server using a private seed.
 
 ## Schema
 
 The schema for messages is a json struct;
 
-```
-{ 
-	id: id, // mongodb generated id.
-	recipient: recipient, // Twice SHA256 hashed blockstack id
-	sender: sender, // Twice SHA256 hashed blockstack id
-	message: message, // public key encrypted message
-	type: type, // type of message - set by the d-app
-	domain: domain // d-app domain
-}
-```
 
 ## Test Environment
 
@@ -67,6 +37,7 @@ docker run --name brightblock_mongo -v /data/db:/data/db -p 27017:27017 -d mongo
 ```
 
 2. Run the comms micro-service
+
 ```
 git clone git@github.com:radicleart/brightblock-comms.git
 cd brightblock-comms
