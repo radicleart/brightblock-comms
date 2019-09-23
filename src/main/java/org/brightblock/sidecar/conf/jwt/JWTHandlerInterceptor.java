@@ -13,6 +13,7 @@ import org.springframework.web.servlet.HandlerInterceptor;
 public class JWTHandlerInterceptor implements HandlerInterceptor {
 
 	private static final Logger logger = LogManager.getLogger(JWTHandlerInterceptor.class);
+	private static final String SPLITTER = "::";
 	private static final String PREFIX = "/v1/admin/";
 	private static final String AUTHORIZATION = "Authorization";
 	private static final String Identity_Address = "IdentityAddress";
@@ -24,14 +25,16 @@ public class JWTHandlerInterceptor implements HandlerInterceptor {
 			if (handler instanceof HandlerMethod) {
 				String path = request.getRequestURI();
 				if (protectedPath(path)) {
-					String address = request.getHeader(Identity_Address);
+					String address = request.getHeader(Identity_Address).split(SPLITTER)[0];
+					String apiKey = request.getHeader(Identity_Address).split(SPLITTER)[1];
+					logger.info("Authentication: api key=" + apiKey);
 					String authToken = request.getHeader(AUTHORIZATION);
 					authToken = authToken.split(" ")[1]; // stripe out Bearer string before passing along..
 					UserTokenAuthentication v1Authentication = UserTokenAuthentication.getInstance(authToken);
 					boolean auth = v1Authentication.isAuthenticationValid(address);
 					String username = v1Authentication.getUsername();
 					if (!auth) {
-						throw new Exception("Failed validation of jwt token");
+						throw new IllegalAccessException("Not authorised to make this request");
 					}
 					request.getSession().setAttribute("USERNAME", username);
 				} else {
@@ -41,7 +44,7 @@ public class JWTHandlerInterceptor implements HandlerInterceptor {
 				logger.info("Unknown request.");
 			}
 		} catch (Exception e) {
-			throw e;
+			throw new IllegalAccessException("Not authorised to make this request");
 		}
 		return HandlerInterceptor.super.preHandle(request, response, handler);
 	}

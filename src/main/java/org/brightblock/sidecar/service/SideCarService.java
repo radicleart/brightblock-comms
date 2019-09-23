@@ -2,11 +2,11 @@ package org.brightblock.sidecar.service;
 
 import java.util.List;
 
-import org.brightblock.sidecar.service.schemas.GaiaConfigSchema;
+import org.brightblock.sidecar.service.schemas.UserGaiaConfigSchema;
 
 
 public interface SideCarService
 {
-	public GaiaConfigSchema save(GaiaConfigSchema gaiaConfigSchema);
-	public List<GaiaConfigSchema> findGaiaConfigSchema(String query);
+	public UserGaiaConfigSchema save(UserGaiaConfigSchema gaiaConfigSchema);
+	public List<UserGaiaConfigSchema> findGaiaConfigSchema(String query);
 }

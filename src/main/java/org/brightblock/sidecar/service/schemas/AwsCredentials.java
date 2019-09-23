@@ -8,6 +8,7 @@ public class AwsCredentials implements Serializable {
 	private String accessKeyId;
 	private String secretAccessKey;
 	private String sessionToken;
+	private String endpoint;
 
 	public AwsCredentials() {
 		super();
@@ -35,6 +36,14 @@ public class AwsCredentials implements Serializable {
 
 	public void setSessionToken(String sessionToken) {
 		this.sessionToken = sessionToken;
+	}
+
+	public String getEndpoint() {
+		return endpoint;
+	}
+
+	public void setEndpoint(String endpoint) {
+		this.endpoint = endpoint;
 	}
 
 }

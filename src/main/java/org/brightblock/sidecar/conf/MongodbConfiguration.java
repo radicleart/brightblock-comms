@@ -16,7 +16,7 @@ public class MongodbConfiguration extends AbstractMongoConfiguration {
 
 	@Override
 	protected String getDatabaseName() {
-		return "radpay";
+		return "radstore";
 	}
 
 	@Override
