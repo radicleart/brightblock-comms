@@ -18,7 +18,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@CrossOrigin(origins = { "http://localhost:8080", "http://localhost:8081", "https://radicle.art", "https://tart.radiclesociety.org", "https://radicle.store", "https://tstore.radiclesociety.org", "https://tdbid.radiclesociety.org",  "https://dbid.io", "https://brightblock.org" }, maxAge = 6000)
+@CrossOrigin(origins = { "http://localhost:8080", "http://localhost:8081", "https://loopbomb.com", "https://test.loopbomb.com", "https://radicle.art", "https://tart.radiclesociety.org", "https://radicle.store", "https://tstore.radiclesociety.org", "https://tdbid.radiclesociety.org",  "https://dbid.io", "https://brightblock.org" }, maxAge = 6000)
 public class SidecarController {
 
 	@Autowired private SidecarRepository sidecarRepository;
