@@ -4,5 +4,6 @@ tomcat
 *.gz
 .settings
 .project
+.idea
 **/.DS_Store
 
